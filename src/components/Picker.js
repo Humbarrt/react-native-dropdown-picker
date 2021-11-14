@@ -11,7 +11,7 @@ import React, {
 import {
     View,
     SafeAreaView,
-    TouchableOpacity,
+    TouchableWithoutFeedback,
     Text,
     Image,
     FlatList,
@@ -1449,9 +1449,9 @@ function Picker({
             Component = <Image source={ICON.CLOSE} style={_closeIconStyle} />;
 
         return (
-            <TouchableOpacity style={_closeIconContainerStyle} onPress={onPressClose}>
+            <TouchableWithoutFeedback style={_closeIconContainerStyle} onPress={onPressClose}>
                 {Component}
-            </TouchableOpacity>
+            </TouchableWithoutFeedback>
         );
     }, [listMode, CloseIconComponent, _closeIconStyle, _closeIconContainerStyle, onPressClose, ICON]);
 
@@ -1687,10 +1687,10 @@ function Picker({
 
     return (
         <View style={_containerStyle} {...containerProps}>
-            <TouchableOpacity style={_style} onPress={__onPress} onLayout={__onLayout} {...props} ref={onRef} pointerEvents={pointerEvents} disabled={disabled} testID={testID}>
+            <TouchableWithoutFeedback style={_style} onPress={__onPress} onLayout={__onLayout} {...props} ref={onRef} pointerEvents={pointerEvents} disabled={disabled} testID={testID}>
                 {_BodyComponent}
                 {_ArrowComponent}
-            </TouchableOpacity>
+            </TouchableWithoutFeedback>
             {DropDownBodyComponent}
         </View>
     );
