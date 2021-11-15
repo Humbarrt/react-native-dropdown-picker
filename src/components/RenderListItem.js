@@ -6,7 +6,7 @@ import React, {
 
 import {
     Text,
-    TouchableWithoutFeedback
+    TouchableOpacity
 } from 'react-native';
 
 import { LIST_MODE } from '../constants';
@@ -162,13 +162,13 @@ function RenderListItem({
     }, [value]);
 
     return (
-        <TouchableWithoutFeedback style={_listItemContainerStyle} onPress={__onPress} onLayout={onLayout} {...props} disabled={selectable === false || disabled} testID={item.testID}>
+        <TouchableOpacity style={_listItemContainerStyle} onPress={__onPress} onLayout={onLayout} {...props} disabled={selectable === false || disabled} testID={item.testID}>
             {IconComponent}
             <Text style={_listItemLabelStyle}>
                 {label}
             </Text>
             {_TickIconComponent}
-        </TouchableWithoutFeedback>
+        </TouchableOpacity>
     );
 }
 

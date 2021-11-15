@@ -11,6 +11,7 @@ import React, {
 import {
     View,
     SafeAreaView,
+    TouchableOpacity,
     TouchableWithoutFeedback,
     Text,
     Image,
@@ -1449,9 +1450,9 @@ function Picker({
             Component = <Image source={ICON.CLOSE} style={_closeIconStyle} />;
 
         return (
-            <TouchableWithoutFeedback style={_closeIconContainerStyle} onPress={onPressClose}>
+            <TouchableOpacity style={_closeIconContainerStyle} onPress={onPressClose}>
                 {Component}
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
         );
     }, [listMode, CloseIconComponent, _closeIconStyle, _closeIconContainerStyle, onPressClose, ICON]);
 

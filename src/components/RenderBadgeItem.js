@@ -5,7 +5,7 @@ import React, {
 import {
     View,
     Text,
-    TouchableWithoutFeedback
+    TouchableOpacity
 } from 'react-native';
 
 import { RTL_DIRECTION, RTL_STYLE } from '../constants';
@@ -61,10 +61,10 @@ function RenderBadge({
     ]), [textStyle, badgeTextStyle]);
 
     return (
-        <TouchableWithoutFeedback style={_badgeStyle} onPress={__onPress}>
+        <TouchableOpacity style={_badgeStyle} onPress={__onPress}>
             {showBadgeDot && <View style={_badgeDotStyle} />}
             <Text style={_badgeTextStyle}>{label}</Text>
-        </TouchableWithoutFeedback>
+        </TouchableOpacity>
     );
 }
 
